@@ -53,7 +53,7 @@ namespace LiteVehicles
         {
             Pawn vehicle = thing as Pawn;
             Thing parts = FindRepairParts(pawn, vehicle, forced);
-            return new Job(LiteVehiclesDefOf.O21_JobDriver_RepairVehicle, vehicle, parts);
+            return new Job(LiteVehiclesDefOf.LVF_JobDriver_RepairVehicle, vehicle, parts);
         }
 
         public static Thing FindRepairParts(Pawn pawn, Pawn vehicle, bool forced)

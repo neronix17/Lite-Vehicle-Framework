@@ -12,11 +12,11 @@ using Verse.AI;
 
 namespace LiteVehicles
 {
-    [HarmonyPatch(typeof(Pawn_DraftController), "Drafted")]
+    [HarmonyPatch(typeof(Pawn_DraftController), "Drafted", MethodType.Setter)]
     public static class Patch_Pawn_DraftController_Drafted
     {
         [HarmonyPrefix]
-        public static bool Prefix(Pawn_DraftController __instance, bool value)
+        public static bool Prefix(Pawn_DraftController __instance, ref bool value)
         {
             if (__instance?.pawn?.TryGetComp<Comp_Vehicle>() is Comp_Vehicle v)
             {

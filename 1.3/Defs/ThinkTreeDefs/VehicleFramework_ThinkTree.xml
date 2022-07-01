@@ -46,7 +46,7 @@
         </li>
 
         <!--Vehicle Unloads its own inventory, logical so long as someone is inside-->
-        <li Class="O21VehicleFramework.ThinkNode_ConditionalCanManipulate">
+        <li Class="LiteVehicles.ThinkNode_ConditionalCanManipulate">
             <subNodes>
                 <li Class="ThinkNode_Tagger">
                     <tagToGive>UnloadingOwnInventory</tagToGive>

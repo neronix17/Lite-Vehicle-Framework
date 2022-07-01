@@ -12,7 +12,7 @@ using RimWorld.Planet;
 
 namespace LiteVehicles
 {
-    [HarmonyPatch(typeof(RestUtility), "FindBedFor")]
+    [HarmonyPatch(typeof(RestUtility), "FindBedFor", new Type[] { typeof(Pawn), typeof(Pawn), typeof(bool), typeof(bool), typeof(GuestStatus?) })]
     public static class Patch_RestUtility_FindBedFor
     {
         [HarmonyPostfix]

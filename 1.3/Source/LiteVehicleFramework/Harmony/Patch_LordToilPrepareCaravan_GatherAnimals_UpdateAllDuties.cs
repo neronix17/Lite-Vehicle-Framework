@@ -15,6 +15,7 @@ namespace LiteVehicles
     [HarmonyPatch(typeof(LordToil_PrepareCaravan_GatherAnimals), "UpdateAllDuties")]
     public static class Patch_LordToil_PrepareCaravan_GatherAnimals_UpdateAllDuties
     {
+        // Might not be necessary anymore thanks to the animal system changing to differentiate roaming and smart animals.
         [HarmonyPrefix]
         public static void Prefix(LordToil_PrepareCaravan_GatherAnimals __instance)
         {

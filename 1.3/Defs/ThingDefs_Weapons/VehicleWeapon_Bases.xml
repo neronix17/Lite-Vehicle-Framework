@@ -3,7 +3,7 @@
 
 	<!-- General Bases -->
 
-	<ThingDef Name="O21Vehicle_BaseWeapon" Abstract="True">
+	<ThingDef Name="LVF_Vehicle_BaseWeapon" Abstract="True">
 		<thingClass>ThingWithComps</thingClass>
 		<category>Item</category>
 		<drawGUIOverlay>true</drawGUIOverlay>
@@ -32,7 +32,7 @@
 		</graphicData>
 	</ThingDef>
 
-	<ThingDef ParentName="O21Vehicle_BaseWeapon" Name="O21Vehicle_GunBase" Abstract="True">
+	<ThingDef ParentName="LVF_Vehicle_BaseWeapon" Name="LVF_Vehicle_GunBase" Abstract="True">
 		<techLevel>Industrial</techLevel>
 		<smeltable>true</smeltable>
 		<thingCategories>

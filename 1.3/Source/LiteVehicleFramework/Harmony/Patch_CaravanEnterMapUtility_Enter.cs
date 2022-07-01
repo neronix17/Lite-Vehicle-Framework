@@ -13,7 +13,7 @@ using RimWorld.Planet;
 
 namespace LiteVehicles
 {
-    [HarmonyPatch(typeof(CaravanEnterMapUtility), "Enter")]
+    [HarmonyPatch(typeof(CaravanEnterMapUtility), "Enter", new Type[] { typeof(Caravan), typeof(Map), typeof(CaravanEnterMode), typeof(CaravanDropInventoryMode), typeof(bool), typeof(Predicate<IntVec3>) })]
     public static class Patch_CaravanEnterMapUtility_Enter
     {
         [HarmonyPrefix]

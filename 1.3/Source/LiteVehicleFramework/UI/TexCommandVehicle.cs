@@ -12,7 +12,7 @@ namespace LiteVehicles
     [StaticConstructorOnStartup]
     public static class TexCommandVehicle
     {
-        public static readonly Texture2D Refuel = ContentFinder<Texture2D>.Get("UI/Commands/O21Refuel", true);
-        public static readonly Texture2D Repair = ContentFinder<Texture2D>.Get("UI/Commands/O21Repair", true);
+        public static readonly Texture2D Refuel = ContentFinder<Texture2D>.Get("UI/Commands/LVF_Refuel", true);
+        public static readonly Texture2D Repair = ContentFinder<Texture2D>.Get("UI/Commands/LVF_Repair", true);
     }
 }

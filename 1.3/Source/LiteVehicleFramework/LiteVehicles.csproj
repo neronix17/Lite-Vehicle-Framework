@@ -70,12 +70,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompatibilityUtil.cs" />
+    <Compile Include="Harmony\Patch_CaravanTicksPerMoveUtility_GetTicksPerMove.cs" />
+    <Compile Include="Harmony\Patch_DamageWorker_AddInjury_FinalizeAndAddInjury.cs" />
+    <Compile Include="Harmony\Patch_IncidentWorker_Disease_PotentialVictims.cs" />
+    <Compile Include="Harmony\Patch_AddictionUtility_CheckDrugAddictionTeachOpportunity.cs" />
+    <Compile Include="Harmony\Patch_FoodUtility_IsAcceptablePreyFor.cs" />
+    <Compile Include="Utils\CompatibilityUtil.cs" />
     <Compile Include="Data\VehicleLoadingBill.cs" />
-    <Compile Include="Harmony\HarmonyPatches.cs" />
+    <Compile Include="Harmony\CompatibilityPatches.cs" />
     <Compile Include="Harmony\Patch_CaravanExitMapUtility_CanExitMapAndJoinOrCreateCaravanNow.cs" />
     <Compile Include="Harmony\Patch_FloatMenuMakerMap_AddHumanlikeOrders.cs" />
-    <Compile Include="Harmony\Patch_JobDriver_Wait_CheckForAutoAttack.cs" />
+    <Compile Include="Utils\VehicleUtil.cs" />
+    <None Include="Harmony\Patch_JobDriver_Wait_CheckForAutoAttack.cs" />
     <Compile Include="Harmony\Patch_Caravan_NeedsTracker_TrySatisfyPawnNeeds.cs" />
     <Compile Include="Harmony\Patch_Caravan_AddPawn.cs" />
     <Compile Include="Harmony\Patch_Dialog_SplitCaravan_CheckForErrors.cs" />
@@ -86,7 +92,7 @@
     <Compile Include="Harmony\Patch_MassUtility_Capacity.cs" />
     <Compile Include="Harmony\Patch_JobGiver_PrepareCaravan_GatherItems_TryGiveJob.cs" />
     <Compile Include="Harmony\Patch_LordToil_LordToil_PrepareCaravan_GatherItems_LordToilTick.cs" />
-    <Compile Include="Harmony\Patch_LordToilPrepareCaravan_GatherAnimals_UpdateAllDuties.cs" />
+    <None Include="Harmony\Patch_LordToilPrepareCaravan_GatherAnimals_UpdateAllDuties.cs" />
     <Compile Include="Harmony\Patch_LordToil_PrepareCaravan_GatherItems_UpdateAllDuties.cs" />
     <Compile Include="Harmony\Patch_JobGiver_Orders_TryGiveJob.cs" />
     <Compile Include="Harmony\Patch_ThinkNode_ConditionalColonist_Satisfied.cs" />
@@ -107,7 +113,6 @@
     <Compile Include="Harmony\Patch_MapPawns_FreeColonistsSpawnedCount.cs" />
     <Compile Include="Harmony\Patch_MapPawns_AnyPawnBlockingMapRemoval.cs" />
     <None Include=".editorconfig" />
-    <None Include="Harmony\Patch_DamageWorker_AddInjury_DamageResult.cs" />
     <Compile Include="Harmony\Patch_FloatMenuMakerMap_AddUndraftedOrders.cs" />
     <Compile Include="Harmony\Patch_PawnUtility_IsTravelingInTransportPodWorldObject.cs" />
     <Compile Include="Harmony\Patch_JobGiver_Haul_TryGiveJob.cs" />

@@ -3,19 +3,19 @@
   
 	<JobDef>
 		<defName>CompVehicle_LoadPassenger</defName>
-		<driverClass>O21VehicleFramework.JobDriver_LoadPassenger</driverClass>
+		<driverClass>LiteVehicles.JobDriver_LoadPassenger</driverClass>
 		<reportString>entering TargetA.</reportString>
 	</JobDef>
 
 	<JobDef>
 		<defName>CompVehicle_Assemble</defName>
-		<driverClass>O21VehicleFramework.JobDriver_AssembleVehicle</driverClass>
+		<driverClass>LiteVehicles.JobDriver_AssembleVehicle</driverClass>
 		<reportString>assembling TargetA.</reportString>
 	</JobDef>
 
 	<JobDef>
-		<defName>O21_JobDriver_RepairVehicle</defName>
-		<driverClass>O21VehicleFramework.JobDriver_RepairVehicle</driverClass>
+		<defName>LVF_JobDriver_RepairVehicle</defName>
+		<driverClass>LiteVehicles.JobDriver_RepairVehicle</driverClass>
 		<reportString>repairing TargetA.</reportString>
 		<casualInterruptible>false</casualInterruptible>
 	</JobDef>

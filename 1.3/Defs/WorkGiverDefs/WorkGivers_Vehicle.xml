@@ -2,9 +2,9 @@
 <Defs>
 
 	<WorkGiverDef>
-		<defName>O21_WorkGiver_RepairVehicle</defName>
+		<defName>LVF_WorkGiver_RepairVehicle</defName>
 		<label>repair vehicles</label>
-		<giverClass>O21VehicleFramework.WorkGiver_RepairVehicle</giverClass>
+		<giverClass>LiteVehicles.WorkGiver_RepairVehicle</giverClass>
 		<workType>Construction</workType>
 		<verb>repair</verb>
 		<gerund>repairing</gerund>

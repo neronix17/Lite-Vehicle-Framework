@@ -14,12 +14,15 @@ namespace LiteVehicles
     [HarmonyPatch(typeof(MapPawns), "AnyPawnBlockingMapRemoval", MethodType.Getter)]
     public static class Patch_MapPawns_AnyPawnblockingMapRemoval
     {
-        static void PostFix(MapPawns __instance, ref bool __result)
+        [HarmonyPrefix]
+        public static bool Prefix(MapPawns __instance, ref bool __result)
         {
-            if (!__result)
+            __result = __instance.AllPawns.ToList().Any(p => p.Faction == Faction.OfPlayer && (p.TryGetComp<Comp_Vehicle>()?.AllOccupants.Any() ?? false));
+            if (__result)
             {
-                __result = __instance.AllPawns.ToList().Any(p => p.Faction == Faction.OfPlayer && (p.TryGetComp<Comp_Vehicle>()?.AllOccupants.Any() ?? false));
+                return false;
             }
+            return true;
         }
     }
 }

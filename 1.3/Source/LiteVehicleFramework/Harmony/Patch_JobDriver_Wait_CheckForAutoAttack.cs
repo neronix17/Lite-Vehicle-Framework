@@ -16,6 +16,8 @@ namespace LiteVehicles
     [HarmonyPatch(typeof(JobDriver_Wait), "CheckForAutoAttack")]
     public static class Patch_JobDriver_Wait_CheckForAutoAttack
     {
+        // Transpiler Fails, too thick to read IL code, I think it's trying to skip the work tag check.
+        // Probably could get away with a simple prefix changing the method when it's a vehicle.
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {

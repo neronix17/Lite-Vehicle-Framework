@@ -11,10 +11,11 @@ namespace LiteVehicles
 {
     public class CompProperties_VehicleSpawner : CompProperties
     {
-        public float assemblyTime = 20f; //In seconds
+        public float assemblyTime = 0f; //In seconds
         public string useVerb = "Assemble {0}";
         public PawnKindDef vehicleToSpawn = null;
         public EffecterDef workEffect = null;
+        public bool assembleOnSpawn = false;
 
         public CompProperties_VehicleSpawner()
         {

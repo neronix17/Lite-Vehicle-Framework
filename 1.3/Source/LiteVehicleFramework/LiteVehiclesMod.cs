@@ -18,7 +18,7 @@ namespace LiteVehicles
         public static LiteVehiclesSettings settings;
         public static Harmony harmony;
 
-        internal static string VersionDir => Path.Combine(ModLister.GetActiveModWithIdentifier("Neronix17.LiteVehicleFramework").RootDir.FullName, "Version.txt");
+        internal static string VersionDir => Path.Combine(ModLister.GetActiveModWithIdentifier("Neronix17.LiteVehicles").RootDir.FullName, "Version.txt");
         public static string CurrentVersion { get; private set; }
 
         public LiteVehiclesMod(ModContentPack content) : base(content)
@@ -34,15 +34,6 @@ namespace LiteVehicles
             File.WriteAllText(VersionDir, CurrentVersion);
 
             harmony = new Harmony("Neronix17.LiteVehicleFramework.RimWorld");
-            if (LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Allow Tool"))
-            {
-                harmony.Patch(AccessTools.Method("AllowTool.PartyHuntController:TryGetGizmo"), new HarmonyMethod(typeof(Harmony), nameof(CompatibilityUtil.GizmoCompatability_Prefix)));
-            }
-            // Compat Patch for IgniteEverything
-            if (LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Ignite Everything"))
-            {
-                harmony.Patch(AccessTools.Method("IgniteEverything.Harmony_PawnAttackGizmoUtility:GetAttackGizmos_Postfix"), new HarmonyMethod(typeof(Harmony), nameof(CompatibilityUtil.GizmoCompatability_Prefix)));
-            }
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 

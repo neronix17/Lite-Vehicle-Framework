@@ -15,7 +15,8 @@ namespace LiteVehicles
     [HarmonyPatch(typeof(Caravan), "IsPlayerControlled", MethodType.Getter)]
     public static class Patch_Caravan_IsPlayerControlled
     {
-        static void Postfix(Caravan __instance, ref bool __result)
+        [HarmonyPostfix]
+        public static void Postfix(Caravan __instance, ref bool __result)
         {
             if (!__result)
             {

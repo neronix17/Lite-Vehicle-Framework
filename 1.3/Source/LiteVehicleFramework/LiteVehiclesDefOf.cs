@@ -17,6 +17,8 @@ namespace LiteVehicles
             DefOfHelper.EnsureInitializedInCtor(typeof(LiteVehiclesDefOf));
         }
         
-        public static JobDef O21_JobDriver_RepairVehicle;
+        public static JobDef LVF_JobDriver_RepairVehicle;
+
+        public static FleshTypeDef LVF_VehicleFlesh;
     }
 }

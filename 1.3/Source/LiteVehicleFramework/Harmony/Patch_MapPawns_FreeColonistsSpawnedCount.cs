@@ -12,7 +12,7 @@ using Verse.AI;
 
 namespace LiteVehicles
 {
-    [HarmonyPatch(typeof(MapPawns), "FreeColonistsSpawnedCount")]
+    [HarmonyPatch(typeof(MapPawns), "FreeColonistsSpawnedCount", MethodType.Getter)]
     public static class Patch_MapPawns_FreeColonistsSpawnedCount
     {
         [HarmonyPostfix]
