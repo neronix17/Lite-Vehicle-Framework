@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A884A26A-3842-45E2-AD56-C864FC46F32D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiteVehicles</RootNamespace>
+    <AssemblyName>LiteVehicles</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.2.1\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp_public_1.3">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp_public_1.3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompatibilityUtil.cs" />
+    <Compile Include="Data\VehicleLoadingBill.cs" />
+    <Compile Include="Harmony\HarmonyPatches.cs" />
+    <Compile Include="Harmony\Patch_CaravanExitMapUtility_CanExitMapAndJoinOrCreateCaravanNow.cs" />
+    <Compile Include="Harmony\Patch_FloatMenuMakerMap_AddHumanlikeOrders.cs" />
+    <Compile Include="Harmony\Patch_JobDriver_Wait_CheckForAutoAttack.cs" />
+    <Compile Include="Harmony\Patch_Caravan_NeedsTracker_TrySatisfyPawnNeeds.cs" />
+    <Compile Include="Harmony\Patch_Caravan_AddPawn.cs" />
+    <Compile Include="Harmony\Patch_Dialog_SplitCaravan_CheckForErrors.cs" />
+    <Compile Include="Harmony\Patch_Dialog_FormCaravan_CheckForErrors.cs" />
+    <Compile Include="Harmony\Patch_CaravanUIUtility_AddPawnsSections.cs" />
+    <Compile Include="Harmony\Patch_CaravanEnterMapUtility_Enter.cs" />
+    <Compile Include="Harmony\Patch_VerbTracker_GetVerbsCommands.cs" />
+    <Compile Include="Harmony\Patch_MassUtility_Capacity.cs" />
+    <Compile Include="Harmony\Patch_JobGiver_PrepareCaravan_GatherItems_TryGiveJob.cs" />
+    <Compile Include="Harmony\Patch_LordToil_LordToil_PrepareCaravan_GatherItems_LordToilTick.cs" />
+    <Compile Include="Harmony\Patch_LordToilPrepareCaravan_GatherAnimals_UpdateAllDuties.cs" />
+    <Compile Include="Harmony\Patch_LordToil_PrepareCaravan_GatherItems_UpdateAllDuties.cs" />
+    <Compile Include="Harmony\Patch_JobGiver_Orders_TryGiveJob.cs" />
+    <Compile Include="Harmony\Patch_ThinkNode_ConditionalColonist_Satisfied.cs" />
+    <Compile Include="Harmony\Patch_RestUtility_FindBedFor.cs" />
+    <Compile Include="Harmony\Patch_FloatMenuUtility_GetMeleeAttackAction.cs" />
+    <Compile Include="Harmony\Patch_GameEnder_IsPlayerControlledWithFreeColonist.cs" />
+    <Compile Include="Harmony\Patch_Caravan_IsPlayerControlled.cs" />
+    <Compile Include="Harmony\Patch_HealthUtility_GetGeneralConditionLabel.cs" />
+    <Compile Include="Harmony\Patch_HealthCardUtility_DrawOverviewTab.cs" />
+    <Compile Include="Harmony\Patch_FloatMenuUtility_GetRangedAttackAction.cs" />
+    <Compile Include="Harmony\Patch_Verb_Shoot_TryCastShot.cs" />
+    <Compile Include="Harmony\Patch_Pawn_DraftController_Drafted.cs" />
+    <Compile Include="Harmony\Patch_Pawn_CurrentlyUsableForBills.cs" />
+    <Compile Include="Harmony\Patch_SocialCardUtility_Recache.cs" />
+    <Compile Include="Harmony\Patch_PawnDownsedWiggler_WigglerTick.cs" />
+    <Compile Include="Harmony\Patch_Pawn_HealthTracker_ShouldBeDowned.cs" />
+    <Compile Include="Harmony\Patch_MapPawns_FreeColonistsSpawnedOrInPlayerEjectablePodsCount.cs" />
+    <Compile Include="Harmony\Patch_MapPawns_FreeColonistsSpawnedCount.cs" />
+    <Compile Include="Harmony\Patch_MapPawns_AnyPawnBlockingMapRemoval.cs" />
+    <None Include=".editorconfig" />
+    <None Include="Harmony\Patch_DamageWorker_AddInjury_DamageResult.cs" />
+    <Compile Include="Harmony\Patch_FloatMenuMakerMap_AddUndraftedOrders.cs" />
+    <Compile Include="Harmony\Patch_PawnUtility_IsTravelingInTransportPodWorldObject.cs" />
+    <Compile Include="Harmony\Patch_JobGiver_Haul_TryGiveJob.cs" />
+    <Compile Include="Harmony\Patch_Pawn_RotationTracker_RotationTrackerTick.cs" />
+    <Compile Include="Harmony\Patch_Pawn_GetGizmos.cs" />
+    <Compile Include="Harmony\Patch_Pawn_IsColonistPlayerControlled.cs" />
+    <Compile Include="Harmony\Patch_TransferableUtility_CanStack.cs" />
+    <Compile Include="Harmony\Patch_RestUtility_InBed.cs" />
+    <Compile Include="Harmony\Patch_PawnRenderer_DrawEquipment.cs" />
+    <Compile Include="Harmony\Patch_PawnRenderer_DrawEquipmentAiming.cs" />
+    <Compile Include="Harmony\Patch_PawnRenderer_CarryWeaponOpenly.cs" />
+    <Compile Include="UI\Command_VehicleHandler.cs" />
+    <Compile Include="Comps\CompProperties_Vehicle.cs" />
+    <Compile Include="Comps\CompProperties_VehicleSpawner.cs" />
+    <Compile Include="Comps\Comp_Vehicle.cs" />
+    <Compile Include="Comps\Comp_VehicleSpawner.cs" />
+    <Compile Include="Comps\Comp_VehicleUtility.cs" />
+    <Compile Include="DeathActionWorkers\DeathActionWorker_NoCorpse.cs" />
+    <Compile Include="ModExtensions\DefModExt_RenderWeaponExt.cs" />
+    <Compile Include="Data\HandlingType.cs" />
+    <Compile Include="Data\HandlingTypeFlags.cs" />
+    <None Include="Harmony.cs" />
+    <Compile Include="UI\ITab_Passengers.cs" />
+    <Compile Include="UI\ITab_Passengers2.cs" />
+    <Compile Include="LiteVehiclesDefOf.cs" />
+    <Compile Include="Jobs\JobDriver_AssembleVehicle.cs" />
+    <Compile Include="Jobs\JobDriver_LoadPassenger.cs" />
+    <Compile Include="Jobs\JobDriver_RepairVehicle.cs" />
+    <Compile Include="Utils\LogUtil.cs" />
+    <Compile Include="Data\ManipulationState.cs" />
+    <Compile Include="Data\MovingState.cs" />
+    <Compile Include="PatchOperation_SettingActive.cs" />
+    <Compile Include="Data\PilotableSlotType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LiteVehiclesMod.cs" />
+    <Compile Include="LiteVehiclesSettings.cs" />
+    <Compile Include="Utils\StringUtil.cs" />
+    <Compile Include="UI\TexCommandVehicle.cs" />
+    <Compile Include="ThinkNodes\ThinkNode_ConditionalCanManipulate.cs" />
+    <Compile Include="ThinkNodes\ThinkNode_ConditionalPawnInside.cs" />
+    <Compile Include="Data\VehicleHandlerGroup.cs" />
+    <Compile Include="Data\VehicleHandlerTemp.cs" />
+    <Compile Include="Data\VehicleRole.cs" />
+    <Compile Include="Data\VehicleType.cs" />
+    <Compile Include="Data\WeaponState.cs" />
+    <Compile Include="Jobs\WorkGiver_RepairVehicle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
